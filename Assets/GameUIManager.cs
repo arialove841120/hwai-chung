@@ -31,4 +31,5 @@ public class GameUIManager : MonoBehaviour {
             target.transform.localScale *= SmallSpeed;
         }
     }
+
 }

@@ -13,7 +13,7 @@ public class BulletScript : MonoBehaviour {
         rigidbody.velocity = Direction * FlyingSpeed;
 
         Transform transform = this.GetComponent<Transform>();
-        transform.eulerAngles -= new Vector3(90, 0, 0);
+        transform.eulerAngles -= new Vector3(90, 0, 0); //把弓箭轉成直線
 
         Invoke("KillYourself", LifeTime);
     }
