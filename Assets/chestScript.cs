@@ -11,7 +11,7 @@ public class chestScript : MonoBehaviour
     public GameObject openState;
     public GameObject closeState;
     public GameHintScript gameHintScript; //控制字幕程式碼
-    public float LifeTime; //字幕存活時間
+    private float time = 0;//計算觸發時間
 
     // Use this for initialization
     void Start()
@@ -24,7 +24,7 @@ public class chestScript : MonoBehaviour
     {
         if (PlayerSensor.CollisionObjects.Count > 0 && this.isOpen == false)
         {
-            if(PlayerSensor.CollisionObjects[0].GetComponent<PlayerScript>() != null)
+            if(PlayerSensor.CollisionObjects[0].GetComponent<PlayerScript>() != null) //確認是否為玩家
             {
                 if(PlayerSensor.CollisionObjects[0].GetComponent<PlayerScript>().hasGoldKey == true)
                 {
@@ -32,20 +32,22 @@ public class chestScript : MonoBehaviour
                     this.openState.SetActive(true);
                     this.closeState.SetActive(false);
                     gameHintScript.OpenChest();
-                    Invoke("textDisappear", LifeTime + 1);
                 }
-                else
+                else if(time == 0)
                 {
                     gameHintScript.NotFoundKey();
-                    Invoke("textDisappear" , LifeTime);
+                    time = gameHintScript.LifeTime;
                 }
             }
-            
         }
-    }
 
-    void textDisappear() //白癡做法~
-    {
-        gameHintScript.TextDisappear();
+        if(time > 0)
+        {
+            time -= Time.deltaTime;
+        }
+        else
+        {
+            time = 0;
+        }
     }
 }

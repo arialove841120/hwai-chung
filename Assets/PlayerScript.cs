@@ -27,7 +27,6 @@ public class PlayerScript : MonoBehaviour
         {
             this.hasGoldKey = true;
             gameHintScript.GetKey();
-            Invoke("textDisappear" , LifeTime);
         }
     }
 

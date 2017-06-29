@@ -11,7 +11,7 @@ public class GameUIManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        scaleTemp = target.transform.localScale;
+        scaleTemp = target.transform.localScale; //取大小比例
 	}
 	
 	// Update is called once per frame
@@ -19,7 +19,7 @@ public class GameUIManager : MonoBehaviour {
 		
 	}
 
-    public void TargetInitial()
+    public void TargetInitial() //變回初始大小
     {
         target.transform.localScale = scaleTemp;
     }
