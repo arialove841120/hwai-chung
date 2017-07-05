@@ -8,16 +8,31 @@ public class GameUIManager : MonoBehaviour {
     public Image target;
     public float SmallSpeed;
     private Vector3 scaleTemp;
+    public GameHintScript gameHintScript;
+    float LifeTime;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
+        LifeTime = gameHintScript.LifeTime + 1.5F;
+        gameHintScript.GameStart();
         scaleTemp = target.transform.localScale; //取大小比例
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update ()
+    {   
+        if(LifeTime > 0)
+        {
+            LifeTime -= Time.deltaTime;
+        }
+        else if (LifeTime < 0)
+        {
+            gameHintScript.WASDsetActive();
+
+            LifeTime = 0;
+        }
+    }
 
     public void TargetInitial() //變回初始大小
     {
