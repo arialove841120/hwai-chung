@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        Cursor.visible = false; //隱藏游標
         animatorController = this.GetComponent<Animator>();
     }
 
@@ -51,8 +52,6 @@ public class PlayerController : MonoBehaviour {
         }
         animatorController.SetFloat("Speed", currentSpeed);
         animatorController.SetBool("LeftMouse", Input.GetMouseButton(0));
-
-        Cursor.visible = false; //隱藏游標
 
         //判斷是否拉弓
         if (Input.GetMouseButton(0))

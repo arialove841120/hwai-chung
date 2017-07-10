@@ -1,35 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Analytics;
 using UnityEngine.UI;
 
 public class GameHintScript : MonoBehaviour {
 
     public GameObject WASD;
-    public GameObject mouse;
+    public GameObject Mouse;
     public Text GameHintText;
     public float LifeTime; //字幕存活時間
 
-    public void WASDsetActive()
+    public void SearchKey()
     {
-        GameHintText.text = "快使用WASD方向鍵移動吧!";
-        WASD.SetActive(true);
-        mouse.SetActive(true);
-        Invoke("TextDisappear", LifeTime + 3);
-        Invoke("ImageDisapper", LifeTime + 3);
+        GameHintText.text = "快去尋找鑰匙把寶箱打開吧!";
+        Invoke("TextDisappear", LifeTime);
     }
 
-    public void ImageDisapper() //把圖片關掉
-    {
-        WASD.SetActive(false);
-        mouse.SetActive(false);
-    }
-
-    public void GameStart()
+    public void StartText()
     {
         GameHintText.text = "歡迎來到暗黑地牢!";
-        Invoke("TextDisappear", LifeTime + 1);
+        Invoke("TextDisappear", LifeTime);
+    }
+
+    public void OpenImage()
+    {
+        GameHintText.text = "運用WASD來移動吧!";
+        WASD.SetActive(true);
+        Mouse.SetActive(true);
+        Invoke("TextDisappear", LifeTime + 3);
+        Invoke("ImageDisappear", LifeTime + 3);
+    }
+
+    public void JumpText()
+    {
+        GameHintText.text = "按下空白鍵來跳過這道牆吧!";
+        Invoke("TextDisappear", LifeTime + 1.5f);
+    }
+
+    public void ImageDisappear()
+    {
+        WASD.SetActive(false);
+        Mouse.SetActive(false);
     }
 
     public void NotFoundKey()
@@ -46,8 +57,8 @@ public class GameHintScript : MonoBehaviour {
 
     public void OpenChest()
     {
-        GameHintText.text = "寶箱打開囉~!";
-        Invoke("TextDisappear", LifeTime + 1);
+        GameHintText.text = "咑咑咑咑咑咑咑～!";
+        Invoke("TextDisappear", LifeTime);
     }
 
     public void TextDisappear()

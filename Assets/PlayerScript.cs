@@ -7,7 +7,6 @@ public class PlayerScript : MonoBehaviour
 {
     public bool hasGoldKey = false;
     public GameHintScript gameHintScript; //控制字幕程式碼
-    public float LifeTime; //字幕存活時間
 
     // Use this for initialization
     void Start()
@@ -23,7 +22,7 @@ public class PlayerScript : MonoBehaviour
 
     public void getKey(string keyType)
     {
-        if(keyType.ToLower().Equals("gold") )
+        if (keyType.ToLower().Equals("gold"))
         {
             this.hasGoldKey = true;
             gameHintScript.GetKey();

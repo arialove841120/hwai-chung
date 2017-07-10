@@ -107,8 +107,6 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_AllowMSAA: 1
-  m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -149,7 +147,7 @@ Light:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1114068083351970}
   m_Enabled: 1
-  serializedVersion: 8
+  serializedVersion: 7
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2.47
@@ -174,8 +172,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &114011038630119268
@@ -193,6 +189,7 @@ MonoBehaviour:
   currentSpeed: 0
   moveSpeed: 5
   rigidBody: {fileID: 54410483954590968}
+  currentRotateX: 0
 --- !u!114 &114773139002859464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -206,7 +203,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGoldKey: 0
   gameHintScript: {fileID: 0}
-  LifeTime: 0
 --- !u!124 &124690775247129070
 Behaviour:
   m_ObjectHideFlags: 1

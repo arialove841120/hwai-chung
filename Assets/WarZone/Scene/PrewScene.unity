@@ -717,7 +717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WASD: {fileID: 1146057626}
-  mouse: {fileID: 770707415}
+  Mouse: {fileID: 770707415}
   GameHintText: {fileID: 73206449}
   LifeTime: 2
 --- !u!1001 &84188943
@@ -4768,7 +4768,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasGoldKey: 0
   gameHintScript: {fileID: 73206451}
-  LifeTime: 2
 --- !u!1001 &878412421
 Prefab:
   m_ObjectHideFlags: 0
